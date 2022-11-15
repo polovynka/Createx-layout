@@ -1,0 +1,29 @@
+.learn-more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include mobile {
+		display: block;
+	}
+
+	&__subtitle {
+		font-weight: $fw-bold;
+		font-size: clamp(15px, 7vw, 28px);
+		line-height: 150%;
+		color: $ebony-color;
+		margin-right: 40px;
+
+		@include tablet {
+			margin-right: 10px;
+			max-width: 50%;
+			line-height: 40px;
+		}
+
+		@include mobile {
+		max-width: none;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+	}
+}

@@ -1,0 +1,37 @@
+.secondary-hero {
+	background-color: $athens-color;
+	padding-top: 153px;
+	padding-bottom: 180px;
+	background-repeat: no-repeat;
+
+	&__title {
+		max-width: 600px;
+		font-size: 72px;
+		line-height: 130%;
+		letter-spacing: 1px;
+		color: $ebony-color;
+		font-weight: $fw-bold;
+		text-transform: uppercase;
+		margin-top: 40px;
+		margin-bottom: 23px;
+	}
+
+	&__descr {
+		color: $storm-color;
+		font-size: 20px;
+		line-height: 150%;
+		max-width: 600px;
+	}
+
+	&--services {
+		background-image: url(../images/second-services-bg.png);
+		background-position: right -8px top;
+	}
+
+	&--services-inner {
+		padding-top: 63px;
+		padding-bottom: 117px;
+		background-image: url(../images/services-inner-hero-bg.png);
+		background-position: right -8px top -90px;
+	}
+}

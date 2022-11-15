@@ -1,0 +1,165 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    max-width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1260px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.main-title {
+    font-weight: $fw-bold;
+    font-size: clamp(16px, 8vw, 72px);
+    line-height: 130%;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    color: $ebony-color;
+    margin-bottom: 25px;
+
+    span {
+        color: $primary-color;
+    }
+
+    &--home {
+        color: $light-color;
+    }
+}
+
+.main-description {
+    margin: 0;
+    font-size: clamp(10px, 4vw, 20px);
+    line-height: 150%;
+    color: $storm-color;
+
+    &--home {
+        color: $light-color;
+        margin-bottom: 60px;
+    }
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: $fw-bold;
+    font-size: clamp(16px, 7vw, 46px);
+    line-height: 130%;
+    color: $ebony-color;
+
+    &--center {
+        text-align: center;
+    }
+}
+
+.description {
+    margin: 0;
+    margin-bottom: 60px;
+    font-size: clamp(8px, 4vw, 18px);
+    line-height: 150%;
+    color: $storm-color;
+
+    &--center {
+        text-align: center;
+    }
+
+    @include mobile {
+        margin-bottom: 30px;
+    }
+}
+
+.section-offset {
+    padding-top: 120px;
+
+    @include tablet {
+        padding-top: 60px;
+    }
+
+    @include mobile {
+        padding-top: 30px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gap);
+
+    @include mobile {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.to-top {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    right: 100px;
+    bottom: 80px;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include laptop {
+        bottom: 40px;
+        right: 30px;
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 150%;
+        color: $primary-color;
+        text-transform: uppercase;
+        margin-right: 16px;
+    }
+}

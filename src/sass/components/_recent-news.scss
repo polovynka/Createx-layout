@@ -1,0 +1,162 @@
+.recent-news {
+	padding-top: 80px;
+	padding-bottom: 120px;
+	background-color: var(--color-light);
+
+	@include mobile{
+	padding-bottom: 50px;
+	}
+
+	&__title {
+		margin-bottom: 60px;
+	}
+
+	&__list {
+		grid-template-rows: repeat(2, 255px);
+		margin-bottom: 80px;
+
+		@include tablet {
+			grid-template-rows: initial;
+		}
+	}
+
+	&__list-item {
+		grid-column: 5 span;
+
+		&:first-child {
+			grid-column: 7 span;
+			grid-row: 2 span;
+
+			@include tablet {
+				grid-column: 12 span;
+				grid-row: auto;
+			}
+
+			@include mobile {
+				grid-column: 4 span;
+			}
+		}
+
+		@include tablet {
+			grid-column: 12 span;
+		}
+
+		@include mobile {
+			grid-column: 4 span;
+		}
+	}
+
+	&__article {
+		overflow: hidden;
+		height: 100%;
+		background: $light-color;
+		box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+			0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+		border-radius: 4px;
+		&-img {
+			width: 100%;
+		}
+		&--small {
+			.recent-news__article-descr {
+				display: none;
+			}
+
+			.recent-news__article-text {
+				padding: 18px 24px;
+			}
+
+			.recent-news__article-title {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	&__article-text {
+		padding: 26px 24px;
+	}
+
+	&__article-title {
+		margin-bottom: 13px;
+	}
+
+	&__article-link {
+		font-weight: $fw-bold;
+		font-size: 20px;
+		line-height: 150%;
+		color: $ebony-color;
+		transition: color 0.3s ease-in-out;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		&:hover {
+			color: $primary-color;
+		}
+
+		&:active {
+			color: $active-color;
+		}
+	}
+
+	&__article-descr {
+		font-size: 16px;
+		line-height: 160%;
+		color: $grey-color;
+	}
+
+	&__article-meta {
+		margin-bottom: 17px;
+	}
+}
+
+.article-meta {
+	font-size: 14px;
+	line-height: 150%;
+	color: $storm-color;
+
+	a {
+		transition: color 0.3s ease-in-out;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		&:hover {
+			color: $primary-color;
+		}
+
+		&:active {
+			color: $active-color;
+		}
+	}
+	&__item {
+		position: relative;
+		color: inherit;
+
+		&:not(:last-child) {
+			margin-right: 21px;
+
+			&::after {
+				position: absolute;
+				content: "";
+				top: 2px;
+				right: -12px;
+				height: 12px;
+				width: 1px;
+				color: inherit;
+				background-color: currentColor;
+			}
+		}
+	}
+
+	&__item--comments {
+		padding-left: 23px;
+		background-image: url(../images/comments.svg);
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 16px 16px;
+	}
+}

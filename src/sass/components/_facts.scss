@@ -1,0 +1,87 @@
+.facts {
+	padding-top: 190px;
+	position: relative;
+	overflow: hidden;
+
+	@include mobile {
+		padding-top: 50px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -97px;
+		left: -252px;
+		width: 1065.95px;
+		height: 858.82px;
+		background-image: url("../images/facts-bg.png");
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 48px;
+		margin-top: 58px;
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include mobile {
+			display: block;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: center;
+
+		@include mobile{
+		&:not(:last-child){
+			margin-bottom: 30px;
+		}
+	}
+	}
+}
+
+.facts-element {
+	&__circle {
+		position: relative;
+
+		svg {
+			transform: rotate(-90deg);
+
+			circle:first-child {
+				fill: none;
+			}
+
+			circle:last-child {
+				fill: none;
+				transition: stroke-dashoffset 1s ease-in-out;
+			}
+		}
+	}
+
+	&__value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-weight: $fw-bold;
+		font-size: 32px;
+		line-height: 150%;
+		color: $ebony-color;
+	}
+
+	&__text {
+		display: block;
+		text-align: center;
+		margin-top: 18px;
+		font-size: 14px;
+		line-height: 150%;
+		color: $ebony-color;
+		text-align: center;
+	}
+}

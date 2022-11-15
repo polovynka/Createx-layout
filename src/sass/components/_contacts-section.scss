@@ -1,0 +1,88 @@
+.contacts-section {
+	padding: 78px 0;
+	background-image: url(../images/contacts-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: $ebony-color;
+
+
+
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.contacts-form {
+	background-color: $light-color;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 48px 40px;
+	max-width: 495px;
+	border: 1px solid #e5e8ed;
+	box-shadow: 0px 60px 80px -20px rgba(30, 33, 44, 0.16), 0px 26px 24px -10px rgba(30, 33, 44, 0.1),
+		0px 12px 10px -6px rgba(30, 33, 44, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+	border-radius: 4px;
+	
+	@include mobile{
+		padding: 15px;
+	}
+	&__title {
+		font-size: 28px;
+		line-height: 150%;
+		font-weight: $fw-bold;
+		color: $ebony-color;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	&__form-field {
+		width: 100%;
+	}
+
+	&__input {
+		width: 100%;
+		padding: 13px;
+		background: $athens-color;
+		border: 1px solid #d7dadd;
+		border-radius: 4px;
+		margin-bottom: 20px;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		&::placeholder {
+			color: #9a9ca5;
+		}
+
+		&--area {
+			resize: none;
+			height: 66px;
+		}
+	}
+
+	&__custom-checkbox {
+		margin-bottom: 21px;
+	}
+
+	&__btn {
+		color: $light-color;
+		background-color: $primary-color;
+		padding: 1px 31px;
+		border-radius: 4px;
+		font-size: 14px;
+		line-height: 44px;
+		font-weight: $fw-bold;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+	}
+}

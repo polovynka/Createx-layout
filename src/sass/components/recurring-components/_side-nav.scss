@@ -1,0 +1,111 @@
+.side-nav {
+	&__toggle {
+		position: fixed;
+		top: 25px;
+		right: 8px;
+		width: 40px;
+		height: 22px;
+		background: none;
+		box-shadow: none;
+		border: none;
+		outline: 0;
+		cursor: pointer;
+		z-index: 30;
+		display: none;
+
+		@include laptop {
+			display: block;
+		}
+
+		span {
+			position: absolute;
+			left: 50%;
+			width: 26px;
+			height: 2px;
+			background-color: $ebony-color;
+			&:nth-child(1) {
+				top: 0;
+				transform: translateX(-50%) translateY(0);
+				transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+					transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+			}
+			&:nth-child(2) {
+				background-color: $primary-color;
+				top: 8px;
+				opacity: 1;
+				transform: translateX(-50%);
+			}
+			&:last-child {
+				top: 16px;
+				transform: translateX(-50%) translateY(0);
+				transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s,
+					transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+			}
+		}
+
+		&.open {
+			span {
+				&:nth-child(1) {
+					top: 50%;
+					background-color: $primary-color;
+					transform: translateX(-50%) rotate(45deg);
+					transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87),
+						transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:last-child {
+					top: 50%;
+					background-color: $primary-color;
+					transform: translateX(-50%) rotate(-45deg);
+					transition: bottom 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87),
+						transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+				}
+			}
+		}
+	}
+
+	&__nav {
+		position: fixed;
+		height: 100vh;
+		top: 0;
+		right: 0;
+		padding: 40px;
+		background-color: #00000034;
+		transform: translateX(100%);
+		transition: all 0.2s ease-out;
+		z-index: 20;
+		display: flex;
+		align-items: center;
+
+		&.open {
+			transform: translateX(0);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__list-item {
+		padding: 12px 0;
+	}
+
+	&__link {
+		font-weight: $fw-bold;
+		font-size: 16px;
+		line-height: 160%;
+		color: $light-color;
+
+		:hover {
+			color: $primary-color;
+		}
+
+		&:active {
+			color: $active-color;
+		}
+	}
+}

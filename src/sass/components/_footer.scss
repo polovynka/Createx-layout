@@ -1,0 +1,275 @@
+.footer {
+	padding: 82px 0;
+	background: $ebony-color;
+	color: rgba($color: #ffffff, $alpha: 0.6);
+
+	@include tablet {
+		padding: 40px 0;
+	}
+	&__container {
+		display: grid;
+		grid-template-columns: 2fr 1fr 2fr;
+		grid-template-rows: auto;
+		gap: 10px;
+		grid-template-areas:
+			"about-Us . form"
+			"address nav-1 nav-2"
+			"copyright . .";
+
+		@include tablet {
+			column-gap: 10px;
+			grid-template-areas:
+				"about-Us about-Us about-Us"
+				"form form form"
+				"address nav-1 nav-2"
+				"copyright copyright .";
+		}
+
+		@include mobile {
+			grid-template-areas:
+				"about-Us about-Us ."
+				"form form form"
+				"address . ."
+				"nav-1 nav-2 ."
+				"copyright copyright copyright";
+		}
+	}
+
+	&__copyright {
+		grid-area: copyright;
+		font-size: 12px;
+		line-height: 150%;
+		color: $light-color;
+
+		span {
+			padding-left: 20px;
+			margin-left: 3px;
+			background-image: url(../images/with-love.svg);
+			background-position: left center;
+			background-size: 16px 16px;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+.footer-about-us {
+	grid-area: about-Us;
+
+	@include mobile {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__header {
+		display: flex;
+		margin-bottom: 24px;
+
+		@include mobile {
+			display: block;
+		}
+
+		.logo {
+			&:focus {
+				outline: 2px solid $primary-color;
+				outline-offset: 2px;
+			}
+		}
+	}
+
+	&__descr {
+		font-size: 14px;
+		line-height: 150%;
+	}
+}
+
+.social {
+	display: flex;
+	margin-left: 60px;
+
+	@include mobile {
+		margin-top: 20px;
+		margin-left: 0;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 16px;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 24px;
+		height: 24px;
+
+		svg {
+			display: block;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			opacity: 0.6;
+			transition: opacity 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&:active {
+				opacity: 1;
+			}
+		}
+
+		&:focus {
+			outline: 2px solid $light-color;
+			outline-offset: 2px;
+		}
+	}
+}
+.footer-form {
+	grid-area: form;
+	margin-bottom: 50px;
+
+	@include mobile {
+		margin-bottom: 20px;
+	}
+	
+	&__title {
+		font-weight: $fw-bold;
+		font-size: 24px;
+		line-height: 150%;
+		color: $light-color;
+		margin-bottom: 23px;
+	}
+	&__form-field {
+		position: relative;
+		margin-bottom: 15px;
+		width: 100%;
+	}
+	&__input {
+		padding-left: 16px;
+		width: 100%;
+		height: 44px;
+		background: rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		font-size: 14px;
+		line-height: 150%;
+
+		@include tablet {
+			font-size: 11px;
+		}
+
+		&::placeholder {
+			color: rgba($color: #ffffff, $alpha: 0.6);
+		}
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+	}
+
+	&__btn {
+		width: clamp(100px, 15vw, 131px);
+		height: 44px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: clamp(12px, 2vw, 14px);
+		padding: 0 20px;
+		background: #ff5a30;
+		border-radius: 0px 4px 4px 0px;
+	}
+
+	&__descr {
+		font-size: 12px;
+		line-height: 150%;
+	}
+}
+
+.footer-address {
+	grid-area: address;
+	font-style: normal;
+	margin-bottom: 54px;
+
+	@include mobile {
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-weight: $fw-bold;
+		color: $light-color;
+		margin-bottom: 14px;
+	}
+
+	&__item {
+		display: block;
+		margin-bottom: 5px;
+
+		a {
+			color: rgba($color: #ffffff, $alpha: 0.6);
+			transition: color 0.3s ease-in-out;
+
+			&:focus {
+				outline: 2px solid $primary-color;
+				outline-offset: 2px;
+			}
+			&:hover {
+				color: $light-color;
+			}
+
+			&:active {
+				color: $light-color;
+			}
+		}
+	}
+	&__name {
+		font-size: 16px;
+		line-height: 160%;
+		color: $light-color;
+	}
+}
+.footer-nav-1 {
+	grid-area: nav-1;
+}
+.footer-nav {
+	&__title {
+		font-size: 16px;
+		line-height: 150%;
+		font-weight: $fw-bold;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: $light-color;
+		margin-bottom: 14px;
+	}
+
+	&__item {
+		margin-bottom: 5px;
+	}
+
+	&__link {
+		font-size: 16px;
+		line-height: 160%;
+		color: rgba($color: #ffffff, $alpha: 0.6);
+		transition: color 0.3s ease-in-out;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+		&:hover {
+			color: $light-color;
+		}
+
+		&:active {
+			color: $light-color;
+		}
+	}
+}
+.footer-nav-2 {
+	grid-area: nav-2;
+}

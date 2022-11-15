@@ -1,0 +1,152 @@
+.header {
+	padding: 21px 0;
+
+
+	.logo {
+		@include laptop {
+			max-width: 100px;
+		}
+
+		@include laptop {
+			max-width: none;
+		}
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+	}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		
+	}
+	.nav {
+		display: flex;
+		align-items: center;
+
+		@include laptop {
+			display: none;
+		}
+	}
+
+	&__nav {
+		@include laptop {
+			margin-left: 0;
+		}
+	}
+
+	&--main {
+		background-color: $light-color;
+	}
+
+	&--secondary {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+
+	&__list-item {
+		&:not(:last-child) {
+			margin-right: 40px;
+
+			@include laptop {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	&__link {
+		font-weight: $fw-bold;
+		font-size: 16px;
+		color: $grey-color;
+		transition: color 0.3s ease-in-out;
+
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		&:hover {
+			color: $active-color;
+		}
+
+		&:active {
+			color: $active-color;
+		}
+	}
+}
+
+.header-contacts {
+	display: flex;
+	align-items: center;
+
+	@include laptop {
+		display: none;
+	}
+
+	&__link {
+		&:focus {
+			outline: 2px solid $primary-color;
+			outline-offset: 2px;
+		}
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		&:not(:last-child) {
+			margin-right: 35px;
+		}
+	}
+}
+.contacts-link {
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	padding-left: 53px;
+
+	&__caption {
+		font-weight: $fw-bold;
+		font-size: 14px;
+		line-height: 21px;
+		color: $grey-color;
+	}
+
+	&__value {
+		color: $ebony-color;
+		font-size: 18px;
+		line-height: 150%;
+		transition: color 0.3s ease-in-out;
+
+		@include laptop {
+			font-size: 16px;
+		}
+
+		&:hover {
+			color: $active-color;
+		}
+
+		&:active {
+			color: $active-color;
+		}
+	}
+
+	&--call {
+		background-image: url(../images/iPhone.svg);
+	}
+
+	&--mail {
+		background-image: url(../images/mail.svg);
+	}
+}

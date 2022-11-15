@@ -1,0 +1,81 @@
+.services-benefits {
+	position: relative;
+	padding-top: 81px;
+	padding-bottom: 104px;
+	background-color: $ebony-color;
+
+	&__title {
+		font-weight: $fw-bold;
+		font-size: 46px;
+		line-height: 130%;
+		color: $light-color;
+		text-align: center;
+		margin-bottom: 22px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: calc(var(--mission-gap) * 2);
+		margin-bottom: 26px;
+	}
+
+	&__list-item {
+		position: relative;
+		padding-top: 71px;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: 48px 48px;
+		text-align: center;
+
+		&:not(:last-child) {
+			&::after {
+				content: "";
+				position: absolute;
+				right: calc(var(--mission-gap) * -1);
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-image: url(../images/divider.png);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+		}
+
+		&--quality {
+			background-image: url(../images/our-benefits-1.svg);
+		}
+		&--safety {
+			background-image: url(../images/our-benefits-2.svg);
+		}
+		&--comfort {
+			background-image: url(../images/our-benefits-3.svg);
+		}
+	}
+
+	&__subtitle {
+		font-weight: $fw-bold;
+		font-size: 20px;
+		line-height: 30px;
+		margin-bottom: 10px;
+		color: $ebony-color;
+	}
+
+	&__description {
+		font-size: 16px;
+		line-height: 160%;
+		color: $storm-color;
+	}
+
+	&__btn-centered {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+	}
+	&__btn {
+		width: 390px;
+	}
+}
+
+
